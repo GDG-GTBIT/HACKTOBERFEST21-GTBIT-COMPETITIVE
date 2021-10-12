@@ -30,6 +30,7 @@ void merge(int *arr1, int *arr2, int n, int m)
     }
 }
 
+
 // METHOD 2 :- 
 void merge2(int ar1[], int ar2[], int m, int n) 
 { 
