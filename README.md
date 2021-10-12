@@ -16,3 +16,8 @@ If you want to contribute to this repository, keep in mind to follow the **Guide
    For ex. if you want to contribute about a question that is present on leetcode, and you are coding in java,
    then do it in folder leetcode, and then under folder java,
    by creating a new folder/file name as the question no. followed by question name.
+ ## 4. What all you can add as contribution:
+     i) You can provide codes from 450 DSA sheet of Love Babbar by specifying the question name and question number.
+     ii) You can provide extra questions other than the ques from sheet.
+     iii) You can provide valid explaination of any topic of DSA.
+     iv) You can provide the codes in all three languages i.e. C++,JAVA,PYTHON
