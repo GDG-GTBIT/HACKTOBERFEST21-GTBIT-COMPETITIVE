@@ -1,4 +1,5 @@
-#include <iostream.h> 
+#include<bits/stdc++.h>
+using namespace std;
 
 int main() 
 { 
@@ -25,9 +26,9 @@ int main()
     } 
     cout<<endl; 
     if (i <= n / 2) 
-      x++; 
+      x= x+1; 
     else 
-      x--; 
+      x= x-1; 
   } 
   return 0; 
 } 

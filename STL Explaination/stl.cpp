@@ -1,4 +1,4 @@
-#include "bits/stdc++.h"
+#include<bits/stdc++.h>
 using namespace std;
 void explainPair(){
 	pair<int,int> a={3,4};
@@ -29,7 +29,7 @@ void explainVector2(){
 	v.push_back(7);
 	vector<int>::iterator it = v.begin();//O(1)
 	cout<<*it<<endl;
-	it++;
+	it=it+1;
 	cout<<*it<<endl;
 	vector<int>::iterator ct= v.end();//points to the memory address after the last element
 	cout<<*ct<<endl;
