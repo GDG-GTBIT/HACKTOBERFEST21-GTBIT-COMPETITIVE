@@ -14,7 +14,8 @@ class FenwickTree {
     public int sum(int r) { // function give sum from [0 to r]
         int ans = 0;
         while (r >= 0) {
-            ans += BIT[r];
+           // ans += BIT[r];
+            ans= ans + BIT[r];
             r = (r & (r + 1)) - 1;
 
         }
