@@ -1,37 +1,66 @@
-vector<int> spirallyTraverse(vector<vector<int> > a, int n, int m) 
-    {
-     int t,b,l,r;
-       t=0;
-       b=n-1;
-       l=0;
-       r=m-1;
-       int dir=0;
-       int constexpr total_sides = 4;
-       vector<int>ans;
-       while(t<=b && l<=r){
-         if(dir==0){
-             for(int i=l;i<=r;i++)
-             ans.push_back(a[t][i]);
-             t++;
-         }  
-           else if(dir==1){
-               for(int i=t;i<=b;i++)
-                ans.push_back(a[i][r]);
-                r--;
-               
-           }
-           else if(dir==2){
-               for(int i=r;i>=l;i--)
-               ans.push_back(a[b][i]);
-               b--;
-           }
-           else if(dir==3)
-           {
-               for(int i=b;i>=t;i--)
-               ans.push_back(a[i][l]);
-               l++;
-           }
-           dir=(dir+1)%total_sides;
-       }
-       return ans;
+#include <iostream>
+using namespace std;
+// Change values of M and N to change the
+// dimensions of the input matrix.
+#define N 4 
+#define M 4
+
+void spiralMatrixPrint(int rows, int cols, int arr[N][M])  {
+  
+  // Defining the boundaries of the matrix.
+  int top = 0, bottom = rows - 1, left = 0, right = cols - 1;
+  
+  // Defining the direction in which the array is to be traversed.
+  int dir = 1;
+ 
+  while (top <= bottom && left <= right) {
+
+    if (dir == 1) {    // moving left->right
+      for (int i = left; i <= right; ++i) {
+        cout<<arr[top][i]  << " ";
+      }
+      // Since we have traversed the whole first
+      // row, move down to the next row.
+      ++top;
+      dir = 2;
+    } 
+    else if (dir == 2) {     // moving top->bottom
+      for (int i = top; i <= bottom; ++i) {
+          cout<<arr[i][right]  << " ";
+      }
+      // Since we have traversed the whole last
+      // column, move left to the previous column.
+      --right;
+      dir = 3;
+    } 
+    else if (dir == 3) {     // moving right->left
+      for (int i = right; i >= left; --i) {
+          cout<<arr[bottom][i] << " ";
+      }
+      // Since we have traversed the whole last
+      // row, move up to the previous row.
+      --bottom;
+      dir = 4;
+    } 
+    else if (dir == 4) {     // moving bottom->up
+      for (int i = bottom; i >= top; --i) {
+          cout<< arr[i][left] << " ";
+      }
+      // Since we have traversed the whole first
+      // col, move right to the next column.
+      ++left;
+      dir = 1;
     }
+  }
+}
+
+int main() {
+  // Driver code
+  int mat[N][M] = { { 1, 2, 3, 4 }, 
+                  { 12, 13, 14, 5 }, 
+                  { 11, 16, 15, 6 }, 
+                  { 10, 9, 8, 7 } };
+  
+  spiralMatrixPrint(N, M, mat); 
+  return 0; 
+}
